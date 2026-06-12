@@ -1,0 +1,3 @@
+D:/githubdir/SimpleRayTracingGPUAcceleration/build/CMakeFiles/SimpleRayTracing.dir
+D:/githubdir/SimpleRayTracingGPUAcceleration/build/CMakeFiles/ALL_BUILD.dir
+D:/githubdir/SimpleRayTracingGPUAcceleration/build/CMakeFiles/ZERO_CHECK.dir

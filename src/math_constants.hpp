@@ -3,22 +3,15 @@
 
 #include <cmath>
 #include <cstdlib>
-#include <limits>
-#include <memory>
 
-// using
-using std::make_shared;
-using std::shared_ptr;
-using std::sqrt;
-
-// 定数
-const double infinity = std::numeric_limits<double>::infinity();
-const double pi = 3.1415926535897932385;
+// 【修正】マクロ依存を避け、確実な巨大な数値を無限大として定義
+__device__ const double infinity = 1e30;
+__device__ const double pi = 3.1415926535897932385;
 
 // ユーティリティ関数
-inline double degrees_to_radians(double degrees)
+__host__ __device__ inline double degrees_to_radians(double degrees)
 {
-    return degrees * pi / 180;
+    return degrees * pi / 180.0;
 }
 
 // 共通ヘッダー

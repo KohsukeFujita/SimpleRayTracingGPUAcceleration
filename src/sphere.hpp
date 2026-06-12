@@ -7,18 +7,18 @@
 class sphere : public hittable
 {
 public:
-    sphere() {}
-    sphere(point3 cen, double r) : center(cen), radius(r) {}
+    __device__ sphere() {}
+    __device__ sphere(point3 cen, double r) : center(cen), radius(r) {}
 
-    virtual bool hit(
-        const ray &r, double tmin, double tmax, hit_record &rec) const;
+    __device__ virtual bool hit(
+        const ray &r, double tmin, double tmax, hit_record &rec) const override;
 
 public:
     point3 center;
     double radius;
 };
 
-bool sphere::hit(
+__device__ bool sphere::hit(
     const ray &r, double t_min, double t_max, hit_record &rec) const
 {
     vec3 oc = r.origin() - center;
@@ -37,7 +37,6 @@ bool sphere::hit(
             rec.p = r.at(rec.t);
             vec3 outward_normal = (rec.p - center) / radius;
             rec.set_face_normal(r, outward_normal);
-
             return true;
         }
         temp = (-half_b + root) / a;
@@ -47,7 +46,6 @@ bool sphere::hit(
             rec.p = r.at(rec.t);
             vec3 outward_normal = (rec.p - center) / radius;
             rec.set_face_normal(r, outward_normal);
-
             return true;
         }
     }

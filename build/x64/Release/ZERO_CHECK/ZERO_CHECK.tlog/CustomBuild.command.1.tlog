@@ -1,0 +1,10 @@
+^D:\GITHUBDIR\SIMPLERAYTRACINGGPUACCELERATION\BUILD\CMAKEFILES\E0604B24D967CF49ECD98CBB4A4FF014\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/githubdir/SimpleRayTracingGPUAcceleration -BD:/githubdir/SimpleRayTracingGPUAcceleration/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/githubdir/SimpleRayTracingGPUAcceleration/build/SimpleRayTracing.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
